@@ -28,8 +28,7 @@ def translate(event, context):
         "body": json.dumps(body)
     }
 
-
-return response
+    return response
 
 
 def getWaste(SESSION_ID, original, waste, status):
@@ -56,8 +55,7 @@ def getWaste(SESSION_ID, original, waste, status):
             elif status == 'dirty':
                 response = generateResponse(SESSION_ID, output_params, wastes[0][2])
             else:
-    response = generateResponse(SESSION_ID, output_params,
-                                "Is the " + waste + " clean or dirty?")
+                response = generateResponse(SESSION_ID, output_params, "Is the " + waste + " clean or dirty?")
 
     return response
 
@@ -66,7 +64,7 @@ def getStatus(body_event): pass
 
 
 def generateResponse(SESSION_ID, output_params, message):
-    body = {
+    return {
         "payload": {
             "google": {
                 "expectUserResponse": True,
@@ -81,19 +79,21 @@ def generateResponse(SESSION_ID, output_params, message):
                     ]
                 }
             }
-        }, "outputContexts
-        : [
-                {
-                    "name": "pro
-                    ects / testrecycling / agent / sessions / % s / contexts / context name" % SESSION_ID,
-                                                                                           "lifespanCount": 5,
-                    "parameters": {
-                        output_params
-                    }
+        },
+        "outputContexts": [
+            {
+                "name": "projects/testrecycling/agent/sessions/"+SESSION_ID+"/contexts/context name",
+                "lifespanCount": 5,
+                "parameters": {
+                    output_params
                 }
-            ],
+            }
+        ],
         "followupEventInput": {
             "name": "event name",
             "languageCode": "en-US",
+            "parameters": {
+                "param": "param value"
+            }
         }
     }
