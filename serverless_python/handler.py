@@ -44,6 +44,7 @@ def translate(event, context):
 
 def getWaste(body_event)
 status = body_event["queryResult"]["parameters"]["status"]
+waste = body_event["queryResult"]["parameters"]["waste"]
 
 # ricerca del waste
 
@@ -52,13 +53,22 @@ f = open(file, 'r')
 dataset = [[value.strip() for value in line.strip().split(';')] for line in f]
 f.close()
 
-# if waste have status
-    # if status != '' 
-      # prendo la risposta in base allo stato
-  # else
-   # chiedere lo stato
-# else
-   # risposta senza stato
+synonim_dataset = [item[4].split(',') for item in dataset]
+
+
+
+
+for row in dataset:
+  if waste in [value.strip() for value in row[4].split(',')]:
+    if status != '':
+      if status = 'clean':
+        response = row[1]
+      else:
+        response = row[2]
+    else:
+      #chiedere lo stato
+  else:
+    response = row[0]
 
   return response
 
