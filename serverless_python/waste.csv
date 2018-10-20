@@ -1,74 +1,74 @@
-recycling centre;;;Aerosols and sprays;Aerosols and sprays, Aerosols and sprays, sprays, aerosol, aerosols, spray
-recycling centre;;;Agrochemicals;Agrochemicals, herbicides and pesticides, Agrochemicals, agrochemical, herbicides, pesticides
-;Yellow container;Grey container;Aluminium cans;Aluminium cans,  Aluminium cans,  aluminium
-;Yellow container;Grey container;Aluminium foil;Aluminium foil, Aluminium foil
-Grey container;;;Animal faeces;Animal faeces,  Animal faeces,  faeces,  jobbies, poop, poo, shit
-recycling centre;;;Batteries;Batteries, Batteries, battery, accumulator, power unit, power bank
-Brown container;;;Bread;Bread, Bread, loaf
-recycling centre;;;CD and DVD;CD and DVD, CD and DVD, dvd, cd, blue ray
-recycling centre;;;Car batteries;Car batteries, Car batteries, car battery
-;Blue container;Grey container;Cardboard packaging;Cardboard packaging, Cardboard packaging, packaging, cardboard boxes
-Grey container;;;Cigarette butts;Cigarette butts, Cigarette butts, cigarette, filter tip, cigar, fag
-Recycling Centre;;;Cleaning products;Cleaning products, Cleaning products
-Recycling Centre;;;Clothes;Clothes, Clothes, dress, apparel, attire, garments, garb, raiment
-Brown container;;;Coffee grounds;Coffee grounds, Coffee grounds
-Brown container;;;Corks;Corks, Corks, cork, seal, stopper
-Recycling Centre;;;Cosmetics;Cosmetics, Cosmetics, cosmetic, beauty products, beauty aids, make-up, beauty
-Grey container;;;Cotton;Cotton, Cotton, cottons
-Brown container;;;Dried flowers;Dried flowers, Dried flowers, dehydrated flowers
-Brown container;;;Eggshells;Eggshells,  Eggshells,  eggshell
-Recycling Centre;;;Electrical items and electronics;Electrical items and electronics, Electrical items and electronics, electronics, electrical items
-Recycling Centre;;;Engine oil;Engine oil, Engine oil, oil engine
-Blue container;;;Envelopes;Envelopes,  Envelopes,  envelope
-Brown container;;;Fish;Fish, Fish
-Recycling Centre;;;Fluorescent lights and light bulbs;Fluorescent lights and light bulbs, Fluorescent lights and light bulbs, compact_fluorescent_light_bulb, light bulb, fluorescent light, fluorescent lights, light bulbs
-Recycling Centre;;;Footwear;Footwear, Footwear, Footwears
-Brown container;;;Fruit;Fruit, Fruit, fruits
-;Green container;Grey container;Glass bottles;Glass bottles, Glass bottles, bottle glass
-;Green container;Grey container;Glass containers;Glass containers, Glass containers, glass case, glass holder
-Grey container;;;Hair;Hair, Hair, wig, curls, toupee, hairpiece
-Recycling Centre;;;Ink and toner cartridges;Ink and toner cartridges, Ink and toner cartridges, toner, ink, inks
-Recycling Centre;;;Large home appliances: washing machines;Large home appliances: washing machines, fridges, washing machine, Large home appliances
-;Yellow container;Grey container;Large plastic water bottles;Large plastic water bottles, Large plastic water bottles
-Brown container;;;Leftovers of meat;Leftovers of meat, Leftovers of meat, plates of meat
-;Blue container;Grey container;Magazines;Magazines, Magazines, magazine, journal, number, book, periodical
-Recycling Centre;;;Mattresses;Mattresses,  Mattresses,  mattress
-Yellow container;;;Metal lids;Metal lids, Metal bottle lids, metal lids
-Yellow container;;;Metal bottle tops;Metal bottle tops,  Metal bottle tops,  turnip_tops
-Recycling Centre;;;Stainless Steel;Stainless Steel, stainless steel
-Brown container;;;Napkins stained;Napkins stained, Napkins stained
-Grey container;;;Nappies;Nappies, Nappies, nappy, diaper
-;Blue container;Grey container;Newspapers;Newspapers, Newspapers, newspaper
-Brown container;;;Nuts;Nuts, Nuts, nut
-;Blue container;Grey container;Paper bags;Paper bags, Paper bags, paper bag
-Brown container;;;Paper towels;Paper towels, Paper towels, paper towel
-;Yellow container;Grey container;Plastic bags;Plastic bags, Plastic bags
-;Yellow container;Grey container;Plastic wrap;Plastic wrap, Plastic wrap, plastic wraps
-Recycling Centre;;;Rubble;Rubble, Rubble
-Grey container;;;Sanitary towels;Sanitary towels, Sanitary towels, sanitary towel
-Brown container;;;Seafood;Seafood, Seafood
-Recycling Centre;;;coffee capsules;coffee capsules, coffee capsules
-Recycling Centre;;;scrap metal;scrap metal, scrap metal
-Brown container;;;Teabags;Teabags, Teabags, teabag
-Yellow container;;;Steel cans;Steel cans, Steel cans
-Recycling Centre;;;Television sets and monitors;Television sets and monitors, Television sets and monitors, television, monitors
-Yellow container;;;Tetra paks;Tetra paks, Tetra paks, tetra pak
-Recycling Centre;;;Thermometers;Thermometers,  Thermometers,  thermometer
-Recycling Centre;;;Used kitchen oil;Used kitchen oil, Used kitchen oil
-Grey container;;;Pencils;Pencils, Pencils, Pencil
-Brown container;;;Vegetables;Vegetables,  Vegetables,  vegetable
-Recycling Centre;;;Videotapes;Videotapes,  Videotapes,  videotape
-;Blue container;Grey container;Wrapping paper;Wrapping paper,  Wrapping paper,  wrapping_paper
-;Blue container;Grey container;Writing paper;Writing paper, writing paper, writing papers
-Yellow container;;;Yogurt pots;Yogurt pots, Yogurt pots, yogurt pot
-Grey container;;;Pens;Pens, Pens, Pen
-Recycling Centre;;;car oil;car oil, car oil
-Recycling Centre;;;smartphone;smartphone, mobile phone, smartphone
-Brown container;;;biscuit;biscuit, biscuit, cookies, wafer
-Yellow container;;;cutlery;cutlery, flatware, cutlery, fork, knife
-Brown container;;;snack;snack, chocolate, snack , candy, brownie
-Yellow container;;;headphones;headphones, headset, loaf
-Grey container;;;shoes;shoes, boot, shoes
-Yellow container;;;iron;iron, iron
-;Blue container;Grey container;plastic;plastic, plastic
-;Green container;Grey container;glass;glass, glass
+recycling centre,,,aerosols and sprays,spray|aerosols and sprays|aerosol|aerosols|sprays
+recycling centre,,,agrochemicals,herbicides and pesticides|agrochemicals|pesticides|herbicides|agrochemical
+,yellow container,grey container,aluminium cans,aluminium cans|aluminium
+,yellow container,grey container,aluminium foil,aluminium foil
+grey container,,,animal faeces,poop|faeces|jobbies|animal faeces|poo|shit
+recycling centre,,,batteries,power bank|accumulator|batteries|battery|power unit
+brown container,,,bread,loaf|bread
+recycling centre,,,cd and dvd,dvd|blue ray|cd and dvd|cd
+recycling centre,,,car batteries,car battery|car batteries
+,blue container,grey container,cardboard packaging,cardboard packaging|cardboard boxes|packaging
+grey container,,,cigarette butts,cigarette butts|filter tip|cigar|fag|cigarette
+recycling centre,,,cleaning products,cleaning products
+recycling centre,,,clothes,garments|garb|dress|attire|clothes|apparel|raiment
+brown container,,,coffee grounds,coffee grounds
+brown container,,,corks,cork|corks|stopper|seal
+recycling centre,,,cosmetics,beauty products|beauty aids|make-up|cosmetic|cosmetics|beauty
+grey container,,,cotton,cottons|cotton
+brown container,,,dried flowers,dried flowers|dehydrated flowers
+brown container,,,eggshells,eggshells|eggshell
+recycling centre,,,electrical items and electronics,electronics|electrical items|electrical items and electronics
+recycling centre,,,engine oil,engine oil|oil engine
+blue container,,,envelopes,envelope|envelopes
+brown container,,,fish,fish
+recycling centre,,,fluorescent lights and light bulbs,light bulb|fluorescent lights and light bulbs|light bulbs|compact fluorescent light bulb|fluorescent light|fluorescent lights
+recycling centre,,,footwear,footwear|footwears
+brown container,,,fruit,fruit|fruits
+,green container,grey container,glass bottles,glass bottles|bottle glass
+,green container,grey container,glass containers,glass containers|glass case|glass holder
+grey container,,,hair,hairpiece|wig|curls|hair|toupee
+recycling centre,,,ink and toner cartridges,inks|toner|ink and toner cartridges|ink
+recycling centre,,,large home appliances: washing machines,large home appliances: washing machines|large home appliances|fridges|washing machine
+,yellow container,grey container,large plastic water bottles,large plastic water bottles
+brown container,,,leftovers of meat,leftovers of meat|plates of meat
+,blue container,grey container,magazines,book|magazines|journal|number|periodical|magazine
+recycling centre,,,mattresses,mattresses|mattress
+yellow container,,,metal lids,metal lids|metal bottle lids
+yellow container,,,metal bottle tops,turnip tops|metal bottle tops
+recycling centre,,,stainless steel,stainless steel
+brown container,,,napkins stained,napkins stained
+grey container,,,nappies,diaper|nappies|nappy
+,blue container,grey container,newspapers,newspapers|newspaper
+brown container,,,nuts,nut|nuts
+,blue container,grey container,paper bags,paper bag|paper bags
+brown container,,,paper towels,paper towels|paper towel
+,yellow container,grey container,plastic bags,plastic bags
+,yellow container,grey container,plastic wrap,plastic wraps|plastic wrap
+recycling centre,,,rubble,rubble
+grey container,,,sanitary towels,sanitary towels|sanitary towel
+brown container,,,seafood,seafood
+recycling centre,,,coffee capsules,coffee capsules
+recycling centre,,,scrap metal,scrap metal
+brown container,,,teabags,teabags|teabag
+yellow container,,,steel cans,steel cans
+recycling centre,,,television sets and monitors,television|monitors|television sets and monitors
+yellow container,,,tetra paks,tetra pak|tetra paks
+recycling centre,,,thermometers,thermometers|thermometer
+recycling centre,,,used kitchen oil,used kitchen oil
+grey container,,,pencils,pencil|pencils
+brown container,,,vegetables,vegetables|vegetable
+recycling centre,,,videotapes,videotape|videotapes
+,blue container,grey container,wrapping paper,wrapping paper|wrapping paper
+,blue container,grey container,writing paper,writing papers|writing paper
+yellow container,,,yogurt pots,yogurt pots|yogurt pot
+grey container,,,pens,pens|pen
+recycling centre,,,car oil,car oil
+recycling centre,,,smartphone,mobile phone|smartphone
+brown container,,,biscuit,cookies|biscuit|wafer
+yellow container,,,cutlery,cutlery|flatware|knife|fork
+brown container,,,snack,candy|chocolate|brownie|snack
+yellow container,,,headphones,loaf|headset|headphones
+grey container,,,shoes,shoes|boot
+yellow container,,,iron,iron
+,blue container,grey container,plastic,plastic
+,green container,grey container,glass,glass

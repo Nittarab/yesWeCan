@@ -3,35 +3,23 @@ from classify import classify
 from db import getBin
 
 
-
 def translate(event, context):
     body_event = json.loads(event["body"])
-
-
-
     print(body_event)
 
-    par = body_event["queryResult"]["parameters"]
-    tMaterial = par["original"]
-    
+    parameters = body_event["queryResult"]["parameters"]
+    SESSION_ID = body_event["session"]
+    original = parameters["original"]
+    waste = parameters["waste"]
+    status = parameters["status"]
+    intent = body_event["queryResult"]["intent"]
 
-    body = {
-        "payload": {
-        "google": {
-          "expectUserResponse": True,
-          "richResponse": {
-            "items": [
-              {
-                "simpleResponse": {
-                    "textToSpeech": classify(tree, attributes[:], dataset[id])
-                 
-                }
-              }
-            ]
-          }
-        }
-      }
-    }
+    if intent == 'getWaste':
+       body = getWaste(SESSION_ID, original, waste, status)
+    elif intent == 'getStatus':
+       body = getWaste(SESSION_ID, original, waste, status)
+    else:
+       body = generateResponse("oooh what?")
 
     print(body)
 
@@ -40,40 +28,69 @@ def translate(event, context):
         "body": json.dumps(body)
     }
 
-    return response
+  return response
 
-def getWaste(body_event)
-status = body_event["queryResult"]["parameters"]["status"]
-waste = body_event["queryResult"]["parameters"]["waste"]
+def getWaste(SESSION_ID, original, waste, status):
+  output_params = {"waste": waste}
 
-# ricerca del waste
+  file = open('waste.csv', 'r')
+  dataset = [line.rstrip('\n').split(',') for line in file] 
+  file.close()
 
-file = 'waste.csv'
-f = open(file, 'r')
-dataset = [[value.strip() for value in line.strip().split(';')] for line in f]
-f.close()
+  wastes = []
 
-synonim_dataset = [item[4].split(',') for item in dataset]
-
-
+  for row in dataset:
+    if waste in [value.strip() for value in row[4].split('|')]:
+        wastes.append(row)
 
 
-for row in dataset:
-  if waste in [value.strip() for value in row[4].split(',')]:
-    if status != '':
-      if status = 'clean':
-        response = row[1]
-      else:
-        response = row[2]
-    else:
-      #chiedere lo stato
-  else:
-    response = row[0]
+  if len(wastes) > 1:
+    message = "Do you mean " + ' or '.join('**' + value + '**' for value in wastes[3]) + "?"
+    response =generateResponse(SESSION_ID, output_params, message)
+  elif len(wastes) == 1:
+
+	if status != '':
+        if status = 'clean':
+            response = generateResponse(SESSION_ID, output_params, wastes[0][1]) 
+        elif status == 'dirty':
+            response = generateResponse(SESSION_ID, output_params, wastes[0][2]) 
+	else:
+       response = generateResponse(SESSION_ID, output_params,
+                                 "Is the " + waste + " clean or dirty?")
 
   return response
 
 
-def getStatus(body_event)
+def getStatus(body_event): pass
 
 
+def generateResponse(SESSION_ID, output_params, message):
+	body = {
+		"payload": {
+		    "google": {
+		        "expectUserResponse": True,
+		        "richResponse": {
+		            "items": [
+		                        {
+		                            "simpleResponse": {
+		                                "textToSpeech": message
 
+		                            }
+		                        }
+		            ]
+		        }
+		    }
+		},   "outputContexts": [
+		    {
+		        "name": "projects/testrecycling/agent/sessions/%s/contexts/context name" % SESSION_ID,
+		        "lifespanCount": 5,
+		        "parameters": {
+		            output_params
+		        }
+		    }
+		],
+		"followupEventInput": {
+		    "name": "event name",
+		    "languageCode": "en-US",
+		}
+	}
