@@ -1,0 +1,142 @@
+{
+    "responseId": "1adef8ff-509e-46ba-b089-c628815f601f",
+    "queryResult": {
+        "queryText": "where to put babies",
+        "action": "papaer",
+        "parameters": {
+            "Tobject": "",
+            "Tmaterial": "babies"
+        },
+        "allRequiredParamsPresent": true,
+        "fulfillmentText": "Hello world",
+        "fulfillmentMessages": [
+            {
+                "text": {
+                    "text": [
+                        "Hello world"
+                    ]
+                }
+            }
+        ],
+        "outputContexts": [
+            {
+                "name": "projects/testrecycling/agent/sessions/ABwppHEsiPs6heK3cRFkNCb92WQOimmDn9ZYJt_TRoUN0y6n-15626s4mmZltLD1WnL8kOaEdfT8a2OVMQ/contexts/actions_capability_screen_output",
+                "parameters": {
+                    "Tobject.original": "",
+                    "Tmaterial": "babies",
+                    "Tmaterial.original": "babies",
+                    "Tobject": ""
+                }
+            },
+            {
+                "name": "projects/testrecycling/agent/sessions/ABwppHEsiPs6heK3cRFkNCb92WQOimmDn9ZYJt_TRoUN0y6n-15626s4mmZltLD1WnL8kOaEdfT8a2OVMQ/contexts/actions_capability_audio_output",
+                "parameters": {
+                    "Tobject.original": "",
+                    "Tmaterial": "babies",
+                    "Tmaterial.original": "babies",
+                    "Tobject": ""
+                }
+            },
+            {
+                "name": "projects/testrecycling/agent/sessions/ABwppHEsiPs6heK3cRFkNCb92WQOimmDn9ZYJt_TRoUN0y6n-15626s4mmZltLD1WnL8kOaEdfT8a2OVMQ/contexts/google_assistant_input_type_keyboard",
+                "parameters": {
+                    "Tobject.original": "",
+                    "Tmaterial": "babies",
+                    "Tmaterial.original": "babies",
+                    "Tobject": ""
+                }
+            },
+            {
+                "name": "projects/testrecycling/agent/sessions/ABwppHEsiPs6heK3cRFkNCb92WQOimmDn9ZYJt_TRoUN0y6n-15626s4mmZltLD1WnL8kOaEdfT8a2OVMQ/contexts/actions_capability_media_response_audio",
+                "parameters": {
+                    "Tobject.original": "",
+                    "Tmaterial": "babies",
+                    "Tmaterial.original": "babies",
+                    "Tobject": ""
+                }
+            },
+            {
+                "name": "projects/testrecycling/agent/sessions/ABwppHEsiPs6heK3cRFkNCb92WQOimmDn9ZYJt_TRoUN0y6n-15626s4mmZltLD1WnL8kOaEdfT8a2OVMQ/contexts/actions_capability_web_browser",
+                "parameters": {
+                    "Tobject.original": "",
+                    "Tmaterial": "babies",
+                    "Tmaterial.original": "babies",
+                    "Tobject": ""
+                }
+            }
+        ],
+        "intent": {
+            "name": "projects/testrecycling/agent/intents/4525e273-6645-4e0f-a646-691f79595237",
+            "displayName": "getWord"
+        },
+        "intentDetectionConfidence": 0.91,
+        "languageCode": "en-us"
+    },
+    "originalDetectIntentRequest": {
+        "source": "google",
+        "version": "2",
+        "payload": {
+            "isInSandbox": true,
+            "surface": {
+                "capabilities": [
+                    {
+                        "name": "actions.capability.MEDIA_RESPONSE_AUDIO"
+                    },
+                    {
+                        "name": "actions.capability.SCREEN_OUTPUT"
+                    },
+                    {
+                        "name": "actions.capability.AUDIO_OUTPUT"
+                    },
+                    {
+                        "name": "actions.capability.WEB_BROWSER"
+                    }
+                ]
+            },
+            "requestType": "SIMULATOR",
+            "inputs": [
+                {
+                    "rawInputs": [
+                        {
+                            "query": "where to put babies",
+                            "inputType": "KEYBOARD"
+                        }
+                    ],
+                    "arguments": [
+                        {
+                            "rawText": "where to put babies",
+                            "textValue": "where to put babies",
+                            "name": "text"
+                        }
+                    ],
+                    "intent": "actions.intent.TEXT"
+                }
+            ],
+            "user": {
+                "locale": "en-US",
+                "userId": "ABwppHGR8RVK6jjHYKVThg98eU7zDJIN1NPhahnikmP-ajnOI_bQI6UEWXSw1UAGpommEEPUWBgxX8wYHA"
+            },
+            "conversation": {
+                "conversationId": "ABwppHEsiPs6heK3cRFkNCb92WQOimmDn9ZYJt_TRoUN0y6n-15626s4mmZltLD1WnL8kOaEdfT8a2OVMQ",
+                "type": "ACTIVE",
+                "conversationToken": "[]"
+            },
+            "availableSurfaces": [
+                {
+                    "capabilities": [
+                        {
+                            "name": "actions.capability.SCREEN_OUTPUT"
+                        },
+                        {
+                            "name": "actions.capability.AUDIO_OUTPUT"
+                        },
+                        {
+                            "name": "actions.capability.WEB_BROWSER"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "session": "projects/testrecycling/agent/sessions/ABwppHEsiPs6heK3cRFkNCb92WQOimmDn9ZYJt_TRoUN0y6n-15626s4mmZltLD1WnL8kOaEdfT8a2OVMQ"
+}
