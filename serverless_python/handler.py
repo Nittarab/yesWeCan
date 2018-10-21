@@ -76,32 +76,31 @@ def getStatus(SESSION_ID, original, waste, status):
 
 
 def generateResponse(SESSION_ID, output_params, message):
-    response =  {
-		"payload": {
-			"google": {
-				"expectUserResponse": True,
-				"richResponse": {
-					"items": [
-						{
-							"simpleResponse": {
-								"textToSpeech": message
+    response = {
+        "payload": {
+            "google": {
+                "expectUserResponse": True,
+                "richResponse": {
+                    "items": [
+                        {
+                            "simpleResponse": {
+                                "textToSpeech": message
 
-							}
-						}
-					]
-				}
-			}
-		}
-	}
-	if output_params != None:
-		response["outputContexts"] = [
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    }
+    if output_params != None:
+        response["outputContexts"] = [
             {
-                "name": "projects/testrecycling/agent/sessions/"+SESSION_ID+"/contexts/context_name",
+                "name": "projects/testrecycling/agent/sessions/" + SESSION_ID + "/contexts/context_name",
                 "lifespanCount": 5,
                 "parameters": {
                     output_params
                 }
             }
         ]
-
     return response
