@@ -1,5 +1,5 @@
 import json
-from recyclingCenters import getRecyclingCenters
+from recyclingCenters import GetRecyclingCenters
 
 def getCardContainer(container_type):
 
@@ -46,37 +46,49 @@ def getCardContainer(container_type):
 	if not card_text: 
 		card_text = text_containers['error'] 
 
-	return json.dumps({
-    	"conversationToken": "",
-    	"expectUserResponse": True,
-    	"expectedInputs": [
-	        {
-	            "inputPrompt": {
-	                "richInitialPrompt": {
-	                    "items": [
-	                        {
-	                            "simpleResponse": {
-	                                "textToSpeech": card_text['text_to_speech']
-	                            }
-	                        },
-	                        {
-	                            "basicCard": {
-	                                "title": card_text['title'],
-	                                "formattedText": card_text['formatted_text'],
-	                                "image": {
-	                                    "url": card_text['image_url'],
-	                                    "accessibilityText": ""
-	                                },
-	                                "imageDisplayOptions": "WHITE" #CROPPED
-	                            }
-	                        }
-	                    ],
-	                    "suggestions": []
-	                }
-	            }
-	        }
-	    ]
-	})
+
+	return {
+		"payload": {
+			"google": {
+				"expectUserResponse": True,
+				"richResponse": {
+					"items": [
+					{
+						"simpleResponse": {
+						"textToSpeech": card_text['text_to_speech']
+						}
+					}
+					]
+				},
+				"expectedInputs": [{
+					"inputPrompt": {
+						"richInitialPrompt": {
+							"items": [
+								{
+									"simpleResponse": {
+										"textToSpeech": card_text['text_to_speech']
+									}
+								},
+								{
+									"basicCard": {
+										"title": card_text['title'],
+										"formattedText": card_text['formatted_text'],
+										"image": {
+											"url": card_text['image_url'],
+												"accessibilityText": ""
+											},
+										"imageDisplayOptions": "WHITE" #CROPPED
+									}
+								}
+							],
+						"suggestions": []
+						}
+					}
+				}]
+			}
+		}
+	}
+
 
 
 def getCardRecycling(map_obj):

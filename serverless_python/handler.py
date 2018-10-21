@@ -25,7 +25,7 @@ def translate(event, context):
     print("intent: %s" % intent)
 
     if intent == 'getWaste':
-        body = getWaste(SESSION_ID, original,1 waste, status)
+        body = getWaste(SESSION_ID, original, waste, status)
     elif intent == 'getStatus':
         body = getWaste(SESSION_ID, original, waste, status)
     else:
