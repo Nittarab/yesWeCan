@@ -25,11 +25,9 @@ def translate(event, context):
     print("intent: %s" % intent)
 
     if intent == 'getWaste':
-        body = getWaste(SESSION_ID, original, waste, status)
-    elif intent == 'getStatus':
-        body = getWaste(SESSION_ID, original, waste, status)
+        body = getWaste(original, waste)
     else:
-        body = generateResponse(SESSION_ID, None, "oooh what?")
+        body = generateResponse("I don't understund, retray!")
 
 
     response = {
@@ -42,7 +40,7 @@ def translate(event, context):
     return response
 
 
-def getWaste(SESSION_ID, original, waste, status):
+def getWaste(original, waste):
     output_params = {"waste": waste}
 
     file = open('waste.csv', 'r')
@@ -55,50 +53,24 @@ def getWaste(SESSION_ID, original, waste, status):
         if waste in [value.strip() for value in row[4].split('|')]:
             wastes.append(row)
 
+
     if len(wastes) > 1:
         message = "Do you mean " + ' or '.join('**' + value + '**' for value in wastes[3]) + "?"
-        response = generateResponse(SESSION_ID, output_params, message)
-    elif len(wastes) == 1:
+        response = generateResponse(message)
 
-        if waste[0] != '':
-            if status != '':
-                if status == 'clean':
-                    response = generateResponse(SESSION_ID, output_params, wastes[0][1])
-                elif status == 'dirty':
-                    response = generateResponse(SESSION_ID, output_params, wastes[0][2])
-                else:
-                    response = generateResponse(SESSION_ID, output_params, "Is the " + waste + " clean or dirty?")
-            else:
-                response = generateResponse(SESSION_ID, output_params, "Is the " + waste + " clean or dirty?")
-        else:
-            response = generateResponse(SESSION_ID, output_params, wastes[0][0])
+        
+    elif len(wastes) == 1:
+        waste = wastes[0][0] or wastes[0][1]
+        response = generateResponse(waste)
+
     else:
-        response = generateResponse(SESSION_ID, output_params, "ERRORE!")
+        response = generateResponse("I don't understund, retray")
+
 
     return response
 
-
-def getStatus(body_event): pass
-
-
-def generateResponse(SESSION_ID, output_params, message):
+def generateResponse(message):
     response = {
-         "fulfillmentText": "This is a text response",
-            "fulfillmentMessages": [
-                {
-                "card": {
-                    "title": "card title",
-                    "subtitle": "card text",
-                    "imageUri": "https://assistant.google.com/static/images/molecule/Molecule-Formation-stop.png",
-                    "buttons": [
-                    {
-                        "text": "button text",
-                        "postback": "https://assistant.google.com/"
-                    }
-                    ]
-                }
-                }
-            ],
         "payload": {
             "google": {
                 "expectUserResponse": True,
@@ -107,7 +79,6 @@ def generateResponse(SESSION_ID, output_params, message):
                         {
                             "simpleResponse": {
                                 "textToSpeech": message
-
                             }
                         }
                     ]
@@ -115,13 +86,5 @@ def generateResponse(SESSION_ID, output_params, message):
             }
         }
     }
-    if output_params != None:
-        response["outputContexts"] = [
-            {
-                "name": "projects/yeswecan-ec289/agent/sessions/" + SESSION_ID + "/contexts/context_name",
-                "lifespanCount": 5,
-                "parameters": output_params
-
-            }
-        ]
+   
     return response
