@@ -19,7 +19,7 @@ def translate(event, context):
     elif intent == 'getStatus':
         body = getWaste(SESSION_ID, original, waste, status)
     else:
-        body = generateResponse("oooh what?")
+        body = generateResponse(SESSION_ID, None, "oooh what?")
 
     print(body)
 
