@@ -12,7 +12,11 @@ def translate(event, context):
     original = parameters["original"]
     waste = parameters["waste"]
     status = parameters["status"]
-    intent = body_event["queryResult"]["intent"]
+    intent = body_event["queryResult"]["intent"]["displayName"]
+
+    print(waste)
+    print(status)
+    print(intent)
 
     if intent == 'getWaste':
         body = getWaste(SESSION_ID, original, waste, status)
@@ -56,6 +60,10 @@ def getWaste(SESSION_ID, original, waste, status):
                 response = generateResponse(SESSION_ID, output_params, wastes[0][2])
             else:
                 response = generateResponse(SESSION_ID, output_params, "Is the " + waste + " clean or dirty?")
+        else:
+            response = generateResponse(SESSION_ID, output_params, "Is the " + waste + " clean or dirty?")
+    else:
+        response = generateResponse(SESSION_ID, output_params, "ERRORE!")
 
     return response
 
@@ -86,9 +94,8 @@ def generateResponse(SESSION_ID, output_params, message):
             {
                 "name": "projects/testrecycling/agent/sessions/" + SESSION_ID + "/contexts/context_name",
                 "lifespanCount": 5,
-                "parameters": {
-                    output_params
-                }
+                "parameters": output_params
+                
             }
         ]
     return response
