@@ -60,15 +60,18 @@ def getWaste(SESSION_ID, original, waste, status):
         response = generateResponse(SESSION_ID, output_params, message)
     elif len(wastes) == 1:
 
-        if status != '':
-            if status == 'clean':
-                response = generateResponse(SESSION_ID, output_params, wastes[0][1])
-            elif status == 'dirty':
-                response = generateResponse(SESSION_ID, output_params, wastes[0][2])
+        if waste[0] != '':
+            if status != '':
+                if status == 'clean':
+                    response = generateResponse(SESSION_ID, output_params, wastes[0][1])
+                elif status == 'dirty':
+                    response = generateResponse(SESSION_ID, output_params, wastes[0][2])
+                else:
+                    response = generateResponse(SESSION_ID, output_params, "Is the " + waste + " clean or dirty?")
             else:
                 response = generateResponse(SESSION_ID, output_params, "Is the " + waste + " clean or dirty?")
         else:
-            response = generateResponse(SESSION_ID, output_params, "Is the " + waste + " clean or dirty?")
+            response = generateResponse(SESSION_ID, output_params, wastes[0][0])
     else:
         response = generateResponse(SESSION_ID, output_params, "ERRORE!")
 
@@ -118,7 +121,7 @@ def generateResponse(SESSION_ID, output_params, message):
                 "name": "projects/yeswecan-ec289/agent/sessions/" + SESSION_ID + "/contexts/context_name",
                 "lifespanCount": 5,
                 "parameters": output_params
-                
+
             }
         ]
     return response
