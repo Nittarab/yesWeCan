@@ -4,6 +4,9 @@ from db import getBin
 
 
 def translate(event, context):
+    print("event: %s" % event)
+    print("context: %s" % context)
+
     body_event = json.loads(event["body"])
     print(body_event)
 
@@ -14,23 +17,27 @@ def translate(event, context):
     status = parameters["status"]
     intent = body_event["queryResult"]["intent"]["displayName"]
 
-    print(waste)
-    print(status)
-    print(intent)
+    print("parameters: %s" % parameters)
+    print("SESSION_ID: %s" % SESSION_ID)
+    print("original: %s" % original)
+    print("waste: %s" % waste)
+    print("status: %s" % status)
+    print("intent: %s" % intent)
 
     if intent == 'getWaste':
-        body = getWaste(SESSION_ID, original, waste, status)
+        body = getWaste(SESSION_ID, original,1 waste, status)
     elif intent == 'getStatus':
         body = getWaste(SESSION_ID, original, waste, status)
     else:
         body = generateResponse(SESSION_ID, None, "oooh what?")
 
-    print(body)
 
     response = {
         "statusCode": 200,
         "body": json.dumps(body)
     }
+
+    print("response: %s" % body)
 
     return response
 
@@ -73,6 +80,22 @@ def getStatus(body_event): pass
 
 def generateResponse(SESSION_ID, output_params, message):
     response = {
+         "fulfillmentText": "This is a text response",
+            "fulfillmentMessages": [
+                {
+                "card": {
+                    "title": "card title",
+                    "subtitle": "card text",
+                    "imageUri": "https://assistant.google.com/static/images/molecule/Molecule-Formation-stop.png",
+                    "buttons": [
+                    {
+                        "text": "button text",
+                        "postback": "https://assistant.google.com/"
+                    }
+                    ]
+                }
+                }
+            ],
         "payload": {
             "google": {
                 "expectUserResponse": True,
@@ -92,7 +115,7 @@ def generateResponse(SESSION_ID, output_params, message):
     if output_params != None:
         response["outputContexts"] = [
             {
-                "name": "projects/testrecycling/agent/sessions/" + SESSION_ID + "/contexts/context_name",
+                "name": "projects/yeswecan-ec289/agent/sessions/" + SESSION_ID + "/contexts/context_name",
                 "lifespanCount": 5,
                 "parameters": output_params
                 
