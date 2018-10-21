@@ -64,7 +64,7 @@ def getStatus(body_event): pass
 
 
 def generateResponse(SESSION_ID, output_params, message):
-    return {
+    response = {
         "payload": {
             "google": {
                 "expectUserResponse": True,
@@ -79,21 +79,16 @@ def generateResponse(SESSION_ID, output_params, message):
                     ]
                 }
             }
-        },
-        "outputContexts": [
+        }
+    }
+    if output_params != None:
+        response["outputContexts"] = [
             {
-                "name": "projects/testrecycling/agent/sessions/"+SESSION_ID+"/contexts/context name",
+                "name": "projects/testrecycling/agent/sessions/" + SESSION_ID + "/contexts/context_name",
                 "lifespanCount": 5,
                 "parameters": {
                     output_params
                 }
             }
-        ],
-        "followupEventInput": {
-            "name": "event name",
-            "languageCode": "en-US",
-            "parameters": {
-                "param": "param value"
-            }
-        }
-    }
+        ]
+    return response
